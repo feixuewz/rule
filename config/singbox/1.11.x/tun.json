@@ -2,9 +2,9 @@
   "log": {
     "disabled": false,
     "level": "info",
-    "output":"/etc/sing-box/sing-box.log",
     "timestamp": true
   },
+  
   "experimental": {
     "clash_api": {
       "external_controller": "0.0.0.0:9095",
@@ -22,6 +22,7 @@
     "store_fakeip": false
     }
   },
+
  "dns": 
  {
    "servers": 
@@ -44,11 +45,10 @@
 "inbounds": [
   {
     "type": "tun",
-	"interface_name": "tun0",
     "address": "172.19.0.1/30",
     "mtu": 9000,
     "auto_route": true,
-    "auto_redirect": false,
+    "auto_redirect": true,
     "strict_route": true,
     "stack": "system",
     "platform": {
@@ -69,16 +69,28 @@
 ],
 
   "outbounds": [
-    { "tag": "🔰节点选择", "type": "selector", "outbounds": ["♻️自动选择","✈️手动选择","🚀 🇭🇰香港","🚀 🇯🇵日本","🚀 🇸🇬新加坡","🚀 🇺🇸美国","🚀 🇹🇼台湾","🚀 其它地区","vl-HK", "🎯全球直连"] },
-    { "tag": "📹YouTube", "type": "selector", "outbounds": ["🔰节点选择","♻️自动选择","✈️手动选择","🚀 🇭🇰香港","🚀 🇯🇵日本","🚀 🇸🇬新加坡","🚀 🇺🇸美国","🚀 🇹🇼台湾","🚀 其它地区","vl-HK", "🎯全球直连"] },
-    { "tag": "👨🏿‍💻GitHub", "type": "selector", "outbounds": ["🔰节点选择","♻️自动选择","✈️手动选择","🚀 🇭🇰香港","🚀 🇯🇵日本","🚀 🇸🇬新加坡","🚀 🇺🇸美国","🚀 🇹🇼台湾","🚀 其它地区","vl-HK", "🎯全球直连"] },
-    { "tag": "💬OpenAi", "type": "selector", "outbounds": ["🔰节点选择","♻️自动选择","✈️手动选择","🚀 🇭🇰香港","🚀 🇯🇵日本","🚀 🇸🇬新加坡","🚀 🇺🇸美国","🚀 🇹🇼台湾","🚀 其它地区","vl-HK", "🎯全球直连"] },
-    { "tag": "🍎 Apple", "type": "selector", "outbounds": ["🔰节点选择","♻️自动选择","✈️手动选择","🚀 🇭🇰香港","🚀 🇯🇵日本","🚀 🇸🇬新加坡","🚀 🇺🇸美国","🚀 🇹🇼台湾","🚀 其它地区","vl-HK", "🎯全球直连"] },
-    { "tag": "🐬 OneDrive", "type": "selector", "outbounds": ["🔰节点选择","♻️自动选择","✈️手动选择","🚀 🇭🇰香港","🚀 🇯🇵日本","🚀 🇸🇬新加坡","🚀 🇺🇸美国","🚀 🇹🇼台湾","🚀 其它地区","vl-HK", "🎯全球直连"] },
-    { "tag": "🪟 Microsoft", "type": "selector", "outbounds": ["🔰节点选择","♻️自动选择","✈️手动选择","🚀 🇭🇰香港","🚀 🇯🇵日本","🚀 🇸🇬新加坡","🚀 🇺🇸美国","🚀 🇹🇼台湾","🚀 其它地区","vl-HK", "🎯全球直连"] },
-    { "tag": "🎥 Netflix", "type": "selector", "outbounds": ["🔰节点选择","♻️自动选择","✈️手动选择","🚀 🇭🇰香港","🚀 🇯🇵日本","🚀 🇸🇬新加坡","🚀 🇺🇸美国","🚀 🇹🇼台湾","🚀 其它地区","vl-HK", "🎯全球直连"] },
-	
-    { "tag": "🚀 🇭🇰香港", "type": "urltest", "outbounds": ["{all}"], "filter": [{ "action": "include", "keywords": ["🇭🇰|HK|hk|香港|港|HongKong"] }], "url": "http://www.google.com/generate_204", "interval": "220s", "tolerance": 30 },
+    { "tag": "🔰节点选择", "type": "selector", "outbounds": ["🔯 香港自动", "🇭🇰 香港节点", "🇯🇵 日本节点", "🇺🇲 美国节点", "🐸 手动切换", "♻️ 自动选择", "🎯全球直连"] },
+    { "tag": "📹 YouTube", "type": "selector", "outbounds": ["🔰节点选择", "♻️ 自动选择", "🔯 香港自动", "🇭🇰 香港节点", "🇯🇵 日本节点", "🇺🇲 美国节点", "🐸 手动切换"] },
+    { "tag": "🤖 OpenAI", "type": "selector", "outbounds": ["🔰节点选择", "♻️ 自动选择", "🔯 香港自动", "🇭🇰 香港节点", "🇯🇵 日本节点", "🇺🇲 美国节点", "🐸 手动切换"] },
+    { "tag": "🍀 Google", "type": "selector", "outbounds": ["🔰节点选择", "♻️ 自动选择", "🔯 香港自动", "🇭🇰 香港节点", "🇯🇵 日本节点", "🇺🇲 美国节点", "🐸 手动切换"] },
+    { "tag": "👨‍💻 Github", "type": "selector", "outbounds": ["🔰节点选择", "♻️ 自动选择", "🔯 香港自动", "🇭🇰 香港节点", "🇯🇵 日本节点", "🇺🇲 美国节点", "🐸 手动切换"] },
+    { "tag": "🪟 Microsoft", "type": "selector", "outbounds": ["🔰节点选择", "♻️ 自动选择", "🔯 香港自动", "🇭🇰 香港节点", "🇯🇵 日本节点", "🇺🇲 美国节点", "🎯全球直连"] },
+    { "tag": "🐬 OneDrive", "type": "selector", "outbounds": ["🔰节点选择", "♻️ 自动选择", "🔯 香港自动", "🇭🇰 香港节点", "🇯🇵 日本节点", "🇺🇲 美国节点", "🐸 手动切换"] },
+    { "tag": "🎵 TikTok", "type": "selector", "outbounds": ["🔰节点选择", "♻️ 自动选择", "🔯 香港自动", "🇭🇰 香港节点", "🇯🇵 日本节点", "🇺🇲 美国节点", "🐸 手动切换"] },
+    { "tag": "🎥 Netflix", "type": "selector", "outbounds": ["🔰节点选择", "♻️ 自动选择", "🔯 香港自动", "🇭🇰 香港节点", "🇯🇵 日本节点", "🇺🇲 美国节点", "🐸 手动切换"] },
+    { "tag": "📲 Telegram", "type": "selector", "outbounds": ["🔰节点选择", "♻️ 自动选择", "🔯 香港自动", "🇭🇰 香港节点", "🇯🇵 日本节点", "🇺🇲 美国节点", "🐸 手动切换"] },
+    { "tag": "🍏 Apple", "type": "selector", "outbounds": ["🎯全球直连", "🇭🇰 香港节点", "🇯🇵 日本节点", "🇺🇲 美国节点"] },
+    { "tag": "🐠 漏网之鱼", "type": "selector", "outbounds": ["🔰节点选择","🎯全球直连"] },
+    { "tag": "🐸 手动切换", "type": "selector", "outbounds": ["{all}"]},
+    { "tag": "🇭🇰 香港节点", "type": "selector", "outbounds": ["{all}"], "filter": [{ "action": "include", "keywords": ["🇭🇰|HK|hk|香港|港|HongKong"] }] },
+    { "tag": "🇯🇵 日本节点", "type": "selector", "outbounds": ["{all}"], "filter": [{ "action": "include", "keywords": ["🇯🇵|JP|jp|日本|日|Japan"] }] },
+    { "tag": "🇺🇲 美国节点", "type": "selector", "outbounds": ["{all}"], "filter": [{ "action": "include", "keywords": ["🇺🇸|US|us|美国|美|United States"] }, { "action": "exclude", "keywords": ["香港|港|HK|hk|HongKong"] }] },
+    { "tag": "🔯 香港自动", "type": "urltest", "outbounds": ["{all}"], "filter": [{ "action": "include", "keywords": ["🇭🇰|HK|hk|香港|港|HongKong"] }], "url": "http://www.gstatic.com/generate_204", "interval": "10m", "tolerance": 50 },
+    { "tag": "♻️ 自动选择", "type": "urltest", "outbounds": ["{all}"], "filter": [{ "action": "exclude", "keywords": ["网站|地址|剩余|过期|时间|有效"] }], "url": "http://www.gstatic.com/generate_204", "interval": "10m", "tolerance": 50 },
+
+
+
+    { "tag": "🚀 🇭🇰香港", "type": "urltest", "outbounds": ["{all}"], "filter": [{ "action": "include", "keywords": ["🇭🇰|HK|hk|香港|港|HongKong"] }], "url": "http://www.google.com/generate_204", "interval": "220s", "tolerance": 30 },	
     { "tag": "🚀 🇯🇵日本", "type": "urltest", "outbounds": ["{all}"], "filter": [{ "action": "include", "keywords": ["🇯🇵|JP|jp|日本|日|Japan"] }], "url": "http://www.google.com/generate_204", "interval": "220s", "tolerance": 50 },
     { "tag": "🚀 🇸🇬新加坡", "type": "urltest", "outbounds": ["{all}"], "filter": [{ "action": "include", "keywords": ["新|sg|singapore"] }], "url": "http://www.google.com/generate_204", "interval": "220s", "tolerance": 50 },
     { "tag": "🚀 🇺🇸美国", "type": "urltest", "outbounds": ["{all}"], "filter": [{ "action": "include", "keywords": ["🇺🇸|US|us|美国|美|United States"] }], "url": "http://www.google.com/generate_204", "interval": "220s", "tolerance": 50 },
@@ -87,9 +99,9 @@
     { "tag": "✈️手动选择", "type": "selector", "outbounds": ["{all}"]},
     { "tag": "♻️自动选择", "type": "urltest", "outbounds": ["{all}"], "filter": [{ "action": "exclude", "keywords": ["网站|地址|剩余|过期|时间|有效"] }], "url": "http://www.google.com/generate_204", "interval": "10m", "tolerance": 50 },
     { "tag": "🐠 漏网之鱼", "type": "selector", "outbounds": ["🔰节点选择","🎯全球直连"] },
-    { "tag": "🎯全球直连", "type": "direct" },
-    { "tag": "GLOBAL", "type": "selector", "outbounds": ["{all}"]}
-
+    { "tag": "🎯全球直连", "type": "direct" }	
+    { "tag": "GLOBAL", "type": "selector", "outbounds": ["{all}"]}	
+	
   ],
   
   "route": 
@@ -104,14 +116,14 @@
      {"clash_mode": "global", "outbound": "GLOBAL"},
      {"domain": ["clash.razord.top", "yacd.metacubex.one", "yacd.haishan.me", "d.metacubex.one"], "outbound": "🎯全球直连"},
      {"rule_set": "geosite-private", "outbound": "🎯全球直连"},
-     {"rule_set": "geosite-chat", "outbound": "💬OpenAi"},
-     {"rule_set": "geosite-youtube", "outbound": "📹YouTube"},
-     {"rule_set": "geosite-github", "outbound": "👨🏿‍💻GitHub"},
-     {"rule_set": ["geosite-google", "geoip-google"], "outbound": "📹YouTube"},
-     {"rule_set": ["geosite-telegram", "geoip-telegram"], "outbound": "🔰节点选择"},
-     {"rule_set": "geosite-tiktok", "outbound": "🔰节点选择"},
+     {"rule_set": "geosite-chat", "outbound": "🤖 OpenAI"},
+     {"rule_set": "geosite-youtube", "outbound": "📹 YouTube"},
+     {"rule_set": "geosite-github", "outbound": "👨‍💻 Github"},
+     {"rule_set": ["geosite-google", "geoip-google"], "outbound": "🍀 Google"},
+     {"rule_set": ["geosite-telegram", "geoip-telegram"], "outbound": "📲 Telegram"},
+     {"rule_set": "geosite-tiktok", "outbound": "🎵 TikTok"},
      {"rule_set": ["geosite-netflix", "geoip-netflix"], "outbound": "🎥 Netflix"},
-     {"rule_set": ["geosite-apple", "geoip-apple"], "outbound": "🍎 Apple"},
+     {"rule_set": ["geosite-apple", "geoip-apple"], "outbound": "🍏 Apple"},
      {"rule_set": "geosite-onedrive", "outbound": "🐬 OneDrive"},
      {"rule_set": "geosite-microsoft", "outbound": "🪟 Microsoft"},
      {"rule_set": "geosite-geolocation-!cn", "outbound": "🔰节点选择"},
