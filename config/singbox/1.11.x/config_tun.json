@@ -89,27 +89,7 @@
     { "tag": "🐠 漏网之鱼", "type": "selector", "outbounds": ["🔰节点选择","🎯全球直连"] },
 	{ "tag": "🎯全球直连", "type": "direct" },
 	{ "tag": "GLOBAL", "type": "selector", "outbounds": ["{all}"]},
-    {
-      "tag": "vl-HK",
-      "type": "vless",
-      "server": "xui.dax08.cn",
-      "server_port": 443,
-      "uuid": "e0b49b89-cef5-40d0-d850-10b54bdf189b",
-      "tls": {
-        "enabled": true,
-        "server_name": "icloud.cdn-apple.com",
-        "insecure": false,
-        "reality": {
-          "enabled": true,
-          "public_key": "rwpbqas_HY8knlW0fFSIeUrjgBXHBzSNboflsLD8elA"
-        },
-        "utls": {
-          "enabled": true,
-          "fingerprint": "chrome"
-        }
-      },
-      "flow": "xtls-rprx-vision"
-    }
+
   ],
   
   "route": 
